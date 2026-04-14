@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Giaodien";
+    Layout = null;
+
+}
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #1a237e;
+        font-family: 'Times New Roman';
+        text-align: center;
+        padding: 30px 0;
+        font-size: 48px;
+        letter-spacing: -2px;
+        color: #fff;
+    }
+
+    nav {
+        background-color: #3a5ca8;
+        text-align: center;
+        padding: 12px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0,1);
+    }
+
+        nav a {
+            color: #f0f4f8;
+            padding: 10px 18px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+
+            nav a:hover {
+                background-color: #aec6e9;
+                color: #1a237e
+            }
+
+    main {
+        display: flex;
+        margin: 20px;
+        gap: 20px;
+    }
+
+    .col-left {
+        flex: 0 0 20%;
+        padding: 10px;
+    }
+
+        .col-left img {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+    .col-right {
+        flex: 0 0 80%;
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 20px;
+        min-height: 300px;
+    }
+
+        .col-right h2 {
+            margin-top: 0px;
+            color: #1a237e;
+        }
+
+    footer {
+        background-color: #1a237e;
+        color: #fff;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 14px;
+    }
+</style>
+<header>Chương trình quản lý sinh viên</header>
+<nav>
+    @Html.ActionLink("Máy Tính", "Index", "Calculator", new { area = "" }, new { @class = "nav-link" })
+    @Html.ActionLink("Tiền điện", "TienDien", "Dien", new { area = "" }, new { @class = "nav-link" })
+    @Html.ActionLink("Bảng điểm", "Diem", "BangDiem", new { area = "" }, new { @class = "nav-link" })
+    <a href="#">About</a>
+</nav>
+<main>
+    <div class="col-left">
+        <img src="~/img/Anh1.png" />
+        <img src="~/img/Anh2.png" />
+    </div>
+    <div class="col-right">
+        @RenderBody()
+    </div>
+</main>
+<footer>Truong dai hoc CNTT va TT</footer>

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "KetQua";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<style>
+    table{
+        border-collapse:collapse;
+        width:400px;
+        margin:auto;
+    }
+    tr,td,th{
+        border: 1px solid;
+    }
+</style>
+
+@model trainTX1.Models.DienModels
+
+<table>
+    <tr>
+        <td>Chủ hộ:</td>
+        <td>@Model.HoTen</td>
+    </tr>
+
+    <tr>
+        <td>Số điện tiêu thụ: </td>
+        <td>@Model.SoDien</td>
+    </tr>
+
+    <tr>
+        <td>Tiền phải trả: </td>
+        <td>@Model.ThanhTien.ToString() Đồng</td>
+    </tr>
+</table>
+
+<div style="text-align:center; margin-top: 10px">
+    <a href="@Url.Action("TienDien")">Quay lại</a>
+</div>
+

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Diem";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<style>
+    table{
+        border-collapse:collapse;
+        width:500px;
+        margin:auto;
+    }
+    tr,th,td{
+        border: 1px solid;
+    }
+</style>
+@using(Html.BeginForm("TinhDiem","BangDiem",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th colspan="3">NHẬP ĐIỂM THI</th>
+        </tr>
+
+        <tr>
+            <td>Họ tên thí sinh:</td>
+            <td><input type="text" name="HoTen" required /></td>
+            <td><input type="checkbox" name="GiaDinhChinhSach" value="true" />Gia đình chính sách</td>
+        </tr>
+
+        <tr>
+            <td>Chọn khu vực: </td>
+            <td colspan="2">
+                <select name="KhuVuc" style="font-size:16px">
+                    <option>Khu vực A</option>
+                    <option>Khu vực B</option>
+                    <option>Khu vực C</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Vào điểm Toán: </td>
+            <td colspan="2"><input type="number" name="DiemToan" required /></td>
+        </tr>
+
+        <tr>
+            <td>Vào điểm Lý: </td>
+            <td colspan="2"><input type="number" name="DiemLy" required /></td>
+        </tr>
+
+        <tr>
+            <td>Vào điểm Hóa: </td>
+            <td colspan="2"><input type="number" name="DiemHoa" required /></td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="text-align:center; font-size:16px"><button type="submit">TÍNH</button></td>
+        </tr>
+    </table>
+}
+

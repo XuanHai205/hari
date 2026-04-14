@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "TestView";
+    Layout = null;//không áp dụng layout.cshtml mặc định
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+
+@*head: Chứa các thông tin ngầm như tiêu đề, font chữ, CSS **@
+<head>
+    <meta charset="utf-8">
+    <title>Quản lý sinh viên</title>
+    <style>
+        table {
+            border-collapse: collapse; /*chỉnh đừng viền k dính vào nhau*/
+        }
+        td, th {
+            padding: 3px; /*chỉnh khoảng chống giữa viền và chữ*/
+        }
+        th {
+            background-color: #dbeafe;
+        }
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+        }
+
+        /*Định nghĩa phong cách cho các phần tử có class header*/
+        .header {
+            background-color: #1e3a8a;
+            color:white;
+            text-align: center;/*căn lề chữ ra chính giữa*/
+            padding:20px;
+            font-family:'Times New Roman';
+            font-size:36px;
+        }
+        .menu {
+            background-color: #3b82f6;
+            padding:10px;
+            text-align:center;
+        }
+        /*các thẻ link bên trong menu*/
+        .menu a{
+            color:white;
+            text-decoration:none; /*Bỏ dấu gaachj chân của đừng link*/
+            margin:0 15px; /*Cách các link ra 15px theo chiều ngang để khong dính vào nhau*/
+            font-weight:bold;/*làm chữ đậm*/
+        }
+
+       .menu a:hover{
+           text-decoration:underline;/*khi di chuột vào sẽ hiện gạch chân ở link*/
+       }
+
+       /* MAIN LAYOUT */
+       .container{
+           display:flex;/*Sắp xếp các phần tử con nằm ngang*/
+       }
+       /*Layot cột bên trái*/
+       .left{
+           width:20%;/*Chiếm 20% độ rộng màn hình*/
+           background-color:#dbeafe;
+           padding: 10px;
+       }
+       /* Hình cảnh ở cột trái */
+            .left img{
+                width:100%;
+                margin-bottom:10px;/* đẩy các chữ ở bên dưới ảnh ra 10px */
+            }
+
+        /*Layot cột bên phải*/
+        .right{
+            width:80%;
+            padding:20px;
+        }
+
+        /* CHÂN TRANG*/
+        .footer {
+            background-color: #1e3a8a;
+            color:white;
+            text-align:center;
+            padding:10px;
+            margin-top:10px;/*Tạo khoảng trắng ở trên để khong dính vào nội dung chính*/
+        }
+    </style>
+</head>
+<body>
+    <!-- Hàng 1-->
+    <div class="header">
+        Chương trình Quản lí sinh viên
+    </div>
+    <!-- Hàng 2-->
+    <div class="menu">
+        <a> Một sinh viên </a> |
+        <a> Một sinh viên </a> |
+        <a> Một sinh viên </a> |
+        <a> Một sinh viên </a> |
+    </div>
+    <!-- Hàng 3-->
+    <div class="container">
+        <!--Cột 1-->
+        <div class="left">
+            <img src="~/img/Anh1.png" alt="Ảnh 1"/>
+            <img src="~/img/Anh2.png" alt="Ảnh 2"/>
+        </div>
+        <!--Cột 2-->
+        <div class="right">
+            <h2>Nội dung</h2>
+            <p>
+                Đây là khu vực hiển thị nội dung chính của hệ thống quản lý sinh viên.
+            </p>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        Bản quyền thuộc về Trường CNTT và TT
+    </div>
+
+</body>
+</html>
+

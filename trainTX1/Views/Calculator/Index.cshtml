@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Máy tính</h2>
+@using (Html.BeginForm("TinhToan", "Calculator", FormMethod.Post))
+{
+    <div>
+        Nhập a: <input type="number" name="a" step="any" required />
+        @*
+            type="number": Chỉ cho phép người dùng nhập số.
+            name="a": Cực kỳ quan trọng! Tên này phải trùng với tên tham số trong hàm C# của Controller để nó nhận được dữ liệu.
+            step="any": Cho phép nhập số thập phân (ví dụ: 1.5, 2.7). Nếu không có cái này, nó chỉ cho nhập số nguyên
+            required: Bắt buộc phải nhập, không được để trống.
+        *@
+        <br />
+        Nhập b: <input type="number" name="b" step="any" required />
+        <br />
+        <input type="radio" name="op" value="+" checked />Cộng
+        <input type="radio" name="op" value="-" /> Trừ
+        <input type="radio" name="op" value="*" />Nhân
+        <input type="radio" name="op" value="/" />Chia
+        @*
+            type="radio": Nút chọn một trong nhiều phương án (chỉ được chọn 1 cái).
+            checked: Mặc định khi vừa mở trang, nút "Cộng" sẽ được chọn sẵn.
+        *@
+        <br />
+            <input style="font-size:16px" type="submit" value="calculator" />
+        @*
+            type="submit": Nút bấm để thực hiện gửi toàn bộ dữ liệu trong Form về phía Server.
+            value="calculate": Chữ hiển thị trên nút bấm.
+        *@
+    </div>
+}
+<br />
+        @if (ViewBag.KetQua != null)
+            {
+                <div style="font-weight:bold">
+                    @ViewBag.KetQua
+                </div>
+            }
+
+

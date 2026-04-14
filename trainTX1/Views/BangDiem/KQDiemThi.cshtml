@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "KQDiemThi";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 500px;
+        margin: auto;
+    }
+
+    tr, th, td {
+        border: 1px solid;
+    }
+</style>
+@model trainTX1.Models.BangDiemModels
+
+<table>
+    <tr>
+        <td>Họ tên thí sinh: </td>
+        <td>@Model.HoTen</td>
+    </tr>
+
+    <tr>
+        <td>Tổng điểm: </td>
+        <td>@Model.TongDiem</td>
+    </tr>
+
+    <tr>
+        <td>Kết quả: </td>
+        <td>@Model.KetQua</td>
+    </tr>
+</table>
+
+<div style="text-align:center">
+    <a href="@Url.Action("Diem")"
+</div>
+

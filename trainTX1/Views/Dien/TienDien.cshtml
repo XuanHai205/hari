@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "TienDien";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+<style>
+    table{
+        border-collapse:collapse;
+        width:500px;
+        margin:auto;
+        text-align:left;
+    }
+    tr,th, td{
+        border:1px solid;
+    }
+</style>
+@using(Html.BeginForm("TinhTienDien", "Dien", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th colspan="3" style="text-align:center">TÍNH TIỀN ĐIỆN</th>
+        </tr>
+
+        <tr>
+            <td>Họ tên chủ hộ: </td>
+            <td><input type="text" name="HoTen" required/></td>
+            <td><input type="checkbox" name="HoUuTien" value="True"/>Hộ ưu tiên</td>
+        </tr>
+        
+        <tr>
+            <td>Loại điện tiêu thụ:</td>
+            <td colspan="2">
+                <select name="LoaiDien" style="font-size:16px">
+                    <option>Sinh hoạt</option>
+                    <option>Kinh doanh</option>
+                    <option>Sản xuất</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Chỉ số cũ: </td>
+            <td colspan="2"><input type="number" name="csc" required /> KW</td>
+        </tr>
+
+        <tr>
+            <td>Chỉ sổ mới: </td>  
+            <td colspan="2"><input type="number" name="csm" required /> KW</td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="text-align:center"><button type="submit">TÍNH</button></td>
+        </tr>
+    </table>
+}
+
